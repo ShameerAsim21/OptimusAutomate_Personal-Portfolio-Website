@@ -48,37 +48,37 @@ ol {
    CSS CUSTOM PROPERTIES
 ============================================= */
 :root {
-  /* Dark theme (default) */
-  --bg: #0d0f1a;
-  --bg-2: #13162a;
-  --bg-card: #181c30;
-  --bg-glass: rgba(24, 28, 48, 0.7);
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #e8eaf0;
-  --text-muted: #8890aa;
-  --accent: #6c63ff;
-  --accent-2: #00d4aa;
-  --accent-glow: rgba(108, 99, 255, 0.3);
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  /* Light theme (default) */
+  --bg: #F7F4F0;
+  --bg-2: #EDE8E2;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(247, 244, 240, 0.90);
+  --border: #E8E2DA;
+  --text: #26211E;
+  --text-muted: #736A62;
+  --accent: #C85A32;
+  --accent-2: #A84825;
+  --accent-glow: rgba(200, 90, 50, 0.12);
+  --shadow: 0 8px 32px rgba(200, 90, 50, 0.08);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.07);
   --radius: 16px;
   --radius-sm: 8px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-[data-theme="light"] {
-  --bg: #f5f7ff;
-  --bg-2: #eef0ff;
-  --bg-card: #ffffff;
-  --bg-glass: rgba(245, 247, 255, 0.8);
-  --border: rgba(0, 0, 0, 0.08);
-  --text: #1a1d2e;
-  --text-muted: #5a6080;
-  --accent: #5a52e8;
-  --accent-2: #00b896;
-  --accent-glow: rgba(90, 82, 232, 0.15);
-  --shadow: 0 8px 32px rgba(90, 82, 232, 0.1);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+[data-theme="dark"] {
+  --bg: #1A1613;
+  --bg-2: #1E1915;
+  --bg-card: #241F1B;
+  --bg-glass: rgba(26, 22, 19, 0.80);
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #F4EFEA;
+  --text-muted: #968B80;
+  --accent: #E28762;
+  --accent-2: #C8703E;
+  --accent-glow: rgba(226, 135, 98, 0.20);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.40);
 }
 
 body {
@@ -179,7 +179,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  background: var(--accent);
   color: #fff;
   box-shadow: 0 4px 16px var(--accent-glow);
 }
@@ -282,20 +282,22 @@ body {
   transform: rotate(15deg);
 }
 
+/* Light theme (default) — show moon icon to switch to dark */
+.sun {
+  display: none;
+}
+
+.moon {
+  display: flex;
+}
+
+/* Dark theme — show sun icon to switch to light */
 [data-theme="dark"] .sun {
   display: flex;
 }
 
 [data-theme="dark"] .moon {
   display: none;
-}
-
-[data-theme="light"] .sun {
-  display: none;
-}
-
-[data-theme="light"] .moon {
-  display: flex;
 }
 
 .nav-right-mobile {
@@ -434,7 +436,7 @@ body {
 .blob-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
   bottom: -80px;
   left: -80px;
   animation-delay: -3s;
@@ -642,7 +644,7 @@ body {
 }
 
 .ring-1 {
-  border-color: rgba(108, 99, 255, 0.5);
+  border-color: var(--accent-glow);
   inset: -8px;
   animation: spin 8s linear infinite;
   border-top-color: var(--accent);
@@ -650,10 +652,10 @@ body {
 }
 
 .ring-2 {
-  border-color: rgba(139, 92, 246, 0.3);
+  border-color: var(--accent-glow);
   inset: -20px;
   animation: spin 12s linear infinite reverse;
-  border-bottom-color: #8b5cf6;
+  border-bottom-color: var(--accent-2);
   border-radius: 50%;
 }
 
@@ -790,7 +792,7 @@ body {
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   border-radius: 3px;
   width: 0%;
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -860,19 +862,19 @@ body {
 }
 
 .project-img-1 {
-  background: linear-gradient(135deg, #6c63ff 0%, #8b5cf6 50%, #ec4899 100%);
+  background: linear-gradient(135deg, #C85A32 0%, #E28762 50%, #D4724A 100%);
 }
 
 .project-img-2 {
-  background: linear-gradient(135deg, #00d4aa 0%, #6c63ff 100%);
+  background: linear-gradient(135deg, #3D2B1F 0%, #C85A32 100%);
 }
 
 .project-img-3 {
-  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #A84825 0%, #C85A32 50%, #E28762 100%);
 }
 
 .project-img-4 {
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #6c63ff 100%);
+  background: linear-gradient(135deg, #E28762 0%, #C85A32 50%, #A84825 100%);
 }
 
 .project-img-overlay {
@@ -919,7 +921,7 @@ body {
   border-radius: 50px;
   background: var(--accent-glow);
   color: var(--accent);
-  border: 1px solid rgba(108, 99, 255, 0.2);
+  border: 1px solid var(--accent-glow);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -1302,7 +1304,7 @@ body {
   bottom: 2rem;
   right: 2rem;
   z-index: 9999;
-  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  background: var(--accent);
   color: #fff;
   font-size: 0.95rem;
   font-weight: 600;
