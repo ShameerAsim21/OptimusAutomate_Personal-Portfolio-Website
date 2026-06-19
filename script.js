@@ -40,7 +40,7 @@ function toggleTheme() {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-// Load saved preference, fallback to OS preference
+// Load saved preference, fallback to light
 (function initTheme() {
   const saved = localStorage.getItem(THEME_KEY);
   if (saved) {
@@ -367,5 +367,5 @@ if (formReset) {
    No layout-blocking operations on scroll.
 ============================================= */
 
-console.log('%c Alex Carter | Portfolio', 'color:#6c63ff;font-size:1.2rem;font-weight:800;');
-console.log('%c Built with ❤️, HTML, CSS & Vanilla JS', 'color:#8890aa;font-size:0.85rem;');
+console.log('%c Portfolio', 'color:#C85A32;font-size:1.2rem;font-weight:800;');
+console.log('%c Built with ❤️, HTML, CSS & Vanilla JS', 'color:#736A62;font-size:0.85rem;');
